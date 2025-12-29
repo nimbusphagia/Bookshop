@@ -1,0 +1,56 @@
+:root {
+  --bglight: #FFFAF2;
+}
+
+/**Simple Normalization **/
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--bglight);
+}
+
+ul,
+li,
+a,
+button,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/**HOMEPAGE**/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'BBH Hegarty';
+}
+
+.Homepage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  font-family: 'BBH Hegarty';
+}

@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 20px 0;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  width: 100vw;
+  font-size: 1.2em;
+  text-align: center;
+}

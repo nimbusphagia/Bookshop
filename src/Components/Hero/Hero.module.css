@@ -1,0 +1,41 @@
+.banner {
+  background-image: url('/images/blue-paint-wall-background-texture.jpg');
+  width: 100vw;
+  height: 80vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.wrapper {
+  font-size: 1.5em;
+  width: calc(100% - 80px);
+  height: calc(100% - 120px);
+
+  background-image: url('/images/stone-surface-background.jpg');
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.8;
+
+  box-sizing: border-box;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  flex: 1;
+}
