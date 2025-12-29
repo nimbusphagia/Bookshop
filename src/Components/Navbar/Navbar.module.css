@@ -1,12 +1,20 @@
-.wrapper {
-  padding: 20px 0;
-}
-
 .navbar {
+  height: 8vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   width: 100vw;
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-align: center;
+  background-color: var(--bgdark);
+  color: var(--white)
+}
+
+.navbar a {
+  display: block;
+  transition: ease-out 0.1s transform;
+}
+
+.navbar a:hover {
+  transform: scale(1.1);
 }

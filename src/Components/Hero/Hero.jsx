@@ -3,7 +3,7 @@ export default function Hero() {
   return (
     <div className={styles.banner}>
       <div className={styles.wrapper}>
-        <h1>BOOK STORE</h1>
+        <h1>STORE</h1>
         <div className={styles.images}>
 
         </div>

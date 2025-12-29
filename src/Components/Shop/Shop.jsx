@@ -6,7 +6,6 @@ function Shop() {
   return (
     <div className={styles.body}>
       <header>
-        <h2 className={styles.title}>SHOP</h2>
       </header>
       <div className={styles.catalog}>
         {products.map((p) => (
