@@ -1,0 +1,35 @@
+.body {
+  width: 100vw;
+  text-align: center;
+}
+
+.body h2 {
+  font-size: 2em;
+}
+
+.catalog {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px 300px;
+  gap: 30px;
+}
+
+.product {
+  display: grid;
+  grid-template-rows: 80% 20%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100%;
+  margin: auto;
+}
+
+.description {
+  overflow: hidden;
+  font-size: 0.8em;
+  margin: auto;
+  padding: 0 10px;
+}

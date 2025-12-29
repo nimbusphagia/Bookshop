@@ -6,7 +6,7 @@ import Homepage from './Components/Homepage/Homepage.jsx'
 import Hero from './Components/Hero/Hero.jsx'
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx'
 import Shop from './Components/Shop/Shop.jsx'
-import { heroLoader } from './Components/Hero/heroLoader.js'
+import { shopLoader } from './Components/Shop/shopLoader.js'
 
 const router = createBrowserRouter([
   {
@@ -21,11 +21,11 @@ const router = createBrowserRouter([
       {
         path: '/home',
         element: <Hero />,
-        loader: heroLoader,
       },
       {
         path: 'shop',
         element: <Shop />,
+        loader: shopLoader,
       }
     ]
   }
