@@ -56,7 +56,7 @@ function Homepage() {
 
   return (
     <main className={styles.Homepage}>
-      <Navbar />
+      <Navbar counter={cart.length} />
       <Outlet context={shopContext} />
       <Footer />
     </main>

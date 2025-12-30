@@ -4,7 +4,9 @@
   --white: #FFFDF7;
   --middark: #002A62;
   --midlight: #FFEAB8;
-  --box: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --brightYellow: #F5E427;
+  --brightOrange: red;
+  --box: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   --texture1: url('/images/blue-paint-wall-background-texture.jpg');
   --texture2: url('/images/stone-surface-background.jpg');
 }

@@ -1,7 +1,7 @@
 import styles from './Navbar.module.css'
 import { NavLink } from "react-router"
 
-function Navbar() {
+function Navbar({ counter }) {
   return (
     <nav className={styles.wrapper}>
       <ul className={styles.navbar}>
@@ -12,7 +12,12 @@ function Navbar() {
           <NavLink to='shop'>Shop</NavLink>
         </li>
         <li>
-          <NavLink to='cart'>Shopping cart</NavLink>
+          <NavLink to='cart'>
+            Shopping cart
+            {counter > 0 &&
+              <p className={styles.counter}>{counter}</p>
+            }
+          </NavLink>
         </li>
       </ul>
     </nav>

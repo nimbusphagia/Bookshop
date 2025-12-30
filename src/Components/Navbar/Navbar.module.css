@@ -7,14 +7,30 @@
   font-size: 1.4em;
   text-align: center;
   background-color: var(--bgdark);
-  color: var(--white)
+  color: var(--white);
+}
+
+.navbar li {
+  margin: auto;
 }
 
 .navbar a {
   display: block;
   transition: ease-out 0.1s transform;
+  position: relative;
 }
 
 .navbar a:hover {
   transform: scale(1.1);
+}
+
+.counter {
+  position: absolute;
+  right: -22px;
+  top: -5px;
+  background-color: var(--brightOrange);
+  color: var(--brightYellow);
+  border-radius: 100%;
+  padding: 0.2em 0.4em;
+  font-size: 12px;
 }

@@ -50,7 +50,13 @@ function Shop() {
                 >
                   {
                     //CART ICON
-                  }
+                    <img
+                      className={styles.icon}
+                      src={isAdded(p.asin)
+                        ? 'images/business.png'
+                        : 'images/add-to-cart.png'
+                      }
+                      alt="" />}
                 </button>
 
 
