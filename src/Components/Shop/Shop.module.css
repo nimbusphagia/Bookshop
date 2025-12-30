@@ -1,5 +1,6 @@
 .body {
   width: 100vw;
+  height: 100%;
   text-align: center;
 }
 
@@ -10,42 +11,74 @@
 .catalog {
   margin: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 300px 300px 300px;
-  gap: 30px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+  height: 100%;
 }
 
 .product {
   display: grid;
-  grid-template-rows: 80% 20%;
-  gap: 10px;
+  grid-template-rows: 76% 24%;
+  gap: 15px;
   text-align: center;
   overflow: hidden;
-  padding: 20px 25px;
+  padding: 25px 20px;
   background-image: var(--texture1);
   border: 2px solid black;
   border-radius: 4px;
   box-shadow: var(--box);
   transition: transform ease-in-out 0.2s;
   color: var(--bgdark);
-
 }
 
 .product:hover {
   cursor: pointer;
   transform: scale(1.05);
-  border-color: var(--midlight);
+  border: 2px solid var(--midlight);
 }
 
 .thumbnail {
-  border-radius: 3px;
+  border-radius: 5px;
   width: 100%;
-  height: 100%;
+  height: 32vh;
   margin: auto;
 }
 
 .description {
-  overflow: hidden;
-  font-size: 0.8em;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(1px);
+}
+
+.title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+}
+
+.title h3 {
+  font-family: 'Rubik glitch';
+  font-size: 16px;
+  line-height: 1;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons p {
+  font-size: 0.9em;
+  color: #F5E427;
+  background-color: red;
+  padding: 2px 7px;
+  border-radius: 3px;
 }

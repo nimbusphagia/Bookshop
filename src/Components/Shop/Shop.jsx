@@ -3,6 +3,16 @@ import { useLoaderData } from "react-router";
 function Shop() {
   const data = useLoaderData();
   const products = data.data.amazonProductSearchResults.productResults.results;
+  console.log(products);
+  //PARSE TITLE BY LIMITING AMOUNT OF WORDS
+  function getTitle(rawTitle = "", maxWords = 5) {
+    const words = rawTitle.trim().split(/\s+/);
+
+    if (words.length <= maxWords) return rawTitle;
+
+    return words.slice(0, maxWords).join(" ") + "…";
+  }
+
   return (
     <div className={styles.body}>
       <header>
@@ -15,12 +25,18 @@ function Shop() {
           >
             <img
               src={p.mainImageUrl}
-              alt={p.title}
+              alt={getTitle(p.title)}
               className={styles.thumbnail}
             />
             <div className={styles.description}>
-              <h3>{p.title}</h3>
-              <p>{p.price.display}</p>
+              <div className={styles.title}>
+                <h3>{getTitle(p.title)}</h3>
+              </div>
+              <div className={styles.buttons}>
+                {<p>{p.price ? p.price.display : '$19.99'}</p>
+                }
+                <button type="button">+</button>
+              </div>
             </div>
           </div>
         ))}

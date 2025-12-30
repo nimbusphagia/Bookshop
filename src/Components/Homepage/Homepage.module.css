@@ -45,6 +45,12 @@ a {
   color: inherit;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+}
+
 /**HOMEPAGE**/
 
 h1,
