@@ -1,0 +1,46 @@
+.body {
+  width: 100vw;
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: calc(70% - 1.5em) 30%;
+  padding: 1.5em;
+  gap: 1.5em;
+}
+
+.body h2 {
+  font-size: 2.2em;
+  text-align: center;
+  font-family: 'Rubik glitch';
+}
+
+.cart,
+.checkout {
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 1em 1.5em;
+  width: 100%;
+  backdrop-filter: blur(1px);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  font-size: 1.2em;
+}
+
+.details .total {
+  font-size: 1.6em;
+  background-color: var(--brightOrange);
+  color: var(--brightYellow);
+  box-shadow: var(--box);
+  border-radius: 2px;
+}

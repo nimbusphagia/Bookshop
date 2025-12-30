@@ -6,6 +6,7 @@ import Homepage from './Components/Homepage/Homepage.jsx'
 import Hero from './Components/Hero/Hero.jsx'
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx'
 import Shop from './Components/Shop/Shop.jsx'
+import Cart from './Components/Cart/Cart.jsx'
 import { shopLoader } from './Components/Shop/shopLoader.js'
 
 const router = createBrowserRouter([
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
         path: 'shop',
         element: <Shop />,
         loader: shopLoader,
-      }
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
+      },
     ]
   }
 ])

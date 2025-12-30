@@ -16,7 +16,7 @@ function Homepage() {
       return [...prev, { id: productId, quantity: 1 }];
     });
   }
-  function addWithQuantity(productId, amount = 1) {
+  function handleQuantity(productId, amount = 1) {
     setCart(prev => {
       const item = prev.find(i => i.id === productId);
 
@@ -26,7 +26,7 @@ function Homepage() {
 
       return prev.map(i =>
         i.id === productId
-          ? { ...i, quantity: i.quantity + amount }
+          ? { ...i, quantity: amount }
           : i
       );
     });
@@ -50,7 +50,7 @@ function Homepage() {
   }
 
   const shopContext = useMemo(
-    () => ({ cart, addOnce, removeOnce, addWithQuantity }),
+    () => ({ cart, addOnce, removeOnce, handleQuantity }),
     [cart]
   );
 
