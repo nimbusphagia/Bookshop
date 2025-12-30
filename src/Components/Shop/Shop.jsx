@@ -3,8 +3,7 @@ import { useLoaderData, useOutletContext } from "react-router";
 function Shop() {
   //LOAD DATA 
   const data = useLoaderData();
-  const products = data.data.amazonProductSearchResults.productResults.results;
-  console.log(products);
+  const products = data.products;
 
   //PARSE TITLE BY LIMITING AMOUNT OF WORDS
   function getTitle(rawTitle = "", maxWords = 5) {
@@ -28,7 +27,7 @@ function Shop() {
             className={styles.product}
           >
             <img
-              src={p.mainImageUrl}
+              src={p.imageUrl}
               alt={getTitle(p.title)}
               className={styles.thumbnail}
             />
@@ -37,7 +36,7 @@ function Shop() {
                 <h3>{getTitle(p.title)}</h3>
               </div>
               <div className={styles.buttons}>
-                {<p>{p.price ? p.price.display : '$19.99'}</p>
+                {<p>{p.price ? `$${p.price.amount}` : '$19.99'}</p>
                 }
                 <button
                   type="button"

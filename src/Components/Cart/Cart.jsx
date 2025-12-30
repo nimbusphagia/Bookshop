@@ -28,7 +28,9 @@ export default function Cart() {
             <p>Total:</p>
             <p>$0.00</p>
           </div>
-
+          <div>
+            <button type="button">Checkout</button>
+          </div>
         </div>
       </div>
     </div>

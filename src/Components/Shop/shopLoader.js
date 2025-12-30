@@ -1,16 +1,26 @@
-export async function shopLoader() {
 
-  const res = await fetch("https://rest.canopyapi.co/api/amazon/search?searchTerm=vinyl%20records&domain=US&limit=30&minPrice=0&conditions=NEW&sort=AVERAGE_CUSTOMER_REVIEW", {
-    method: 'GET',
-    headers: {
-      'API-KEY': import.meta.env.VITE_CANOPY_KEY,
-      'Content-Type': 'application/json'
-    }
-  });
+export async function shopLoader() {
+  const keyword = encodeURIComponent("vinyl records");
+  const geocode = "US";
+  const zipcode = "10001";
+  const page = 1;
+
+  const url =
+    `https://api.scrape.do/plugin/amazon/search` +
+    `?token=${import.meta.env.VITE_SCRAPEDO_KEY}` +
+    `&keyword=${keyword}` +
+    `&geocode=${geocode}` +
+    `&zipcode=${zipcode}` +
+    `&page=${page}`;
+
+  const res = await fetch(url);
 
   if (!res.ok) {
-    throw new Response("Failed to load hero data", { status: res.status });
+    throw new Response("Failed to load shop data", {
+      status: res.status
+    });
   }
 
   return res.json();
 }
+
