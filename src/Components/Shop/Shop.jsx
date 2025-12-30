@@ -1,9 +1,11 @@
 import styles from './Shop.module.css'
-import { useLoaderData } from "react-router";
+import { useLoaderData, useOutletContext } from "react-router";
 function Shop() {
+  //LOAD DATA 
   const data = useLoaderData();
   const products = data.data.amazonProductSearchResults.productResults.results;
   console.log(products);
+
   //PARSE TITLE BY LIMITING AMOUNT OF WORDS
   function getTitle(rawTitle = "", maxWords = 5) {
     const words = rawTitle.trim().split(/\s+/);
@@ -12,7 +14,9 @@ function Shop() {
 
     return words.slice(0, maxWords).join(" ") + "…";
   }
-
+  //CART STATE
+  const { cart, addOnce, removeOnce } = useOutletContext();
+  const isAdded = (id) => cart.some(item => item.id === id);
   return (
     <div className={styles.body}>
       <header>
@@ -35,7 +39,21 @@ function Shop() {
               <div className={styles.buttons}>
                 {<p>{p.price ? p.price.display : '$19.99'}</p>
                 }
-                <button type="button">+</button>
+                <button
+                  type="button"
+                  className={isAdded(p.asin) ? styles.remove : styles.add}
+                  onClick={() =>
+                    isAdded(p.asin)
+                      ? removeOnce(p.asin)
+                      : addOnce(p.asin)
+                  }
+                >
+                  {
+                    //CART ICON
+                  }
+                </button>
+
+
               </div>
             </div>
           </div>
