@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100%;
   text-align: center;
+
 }
 
 .body h2 {
@@ -63,7 +64,7 @@
   height: 100%;
 }
 
-.title h3 {
+.description h3 {
   font-family: 'Rubik glitch';
   font-size: 1.15em;
   line-height: 1;
