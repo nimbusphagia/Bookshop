@@ -7,6 +7,11 @@ export default function Cart() {
     (sum, item) => sum + item.quantity * item.price,
     0
   );
+  function getTitle(rawTitle = "", maxWords = 8) {
+    const words = rawTitle.trim().split(/\s+/);
+    if (words.length <= maxWords) return rawTitle;
+    return words.slice(0, maxWords).join(" ") + "…";
+  }
   return (
     <div
       className={styles.body}
@@ -36,7 +41,7 @@ export default function Cart() {
               >
                 <div className={styles.item}>
                   <img src={p.imgUrl} alt={p.title} />
-                  <p className={styles.title}> {p.title}</p>
+                  <p className={styles.title}> {getTitle(p.title)}</p>
                 </div>
                 <p className={styles.price}>${p.price.toFixed(2)}</p>
                 <div className={styles.quantity}>

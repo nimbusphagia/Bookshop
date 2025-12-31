@@ -6,21 +6,34 @@
   align-items: center;
 }
 
-
-
 .wrapper {
   position: relative;
   width: 92%;
   height: 85%;
   box-sizing: border-box;
-  background-color: rgb(255, 255, 255, 0.4);
+  background-color: rgb(255, 255, 255, 0.15);
+  box-shadow: var(--box);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  gap: 0.3em;
 }
 
 
 .wrapper h1 {
-  font-size: 60px;
+  font-size: 78px;
+  font-family: 'Rubik glitch';
+}
+
+.wrapper p {
+  font-size: 26px;
+  color: var(--bgdark);
+}
+
+.wrapper span {
+  color: var(--brightYellow);
+  font-family: 'Rubik glitch';
+  padding-left: 3px;
 }

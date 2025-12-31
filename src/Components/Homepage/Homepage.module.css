@@ -8,7 +8,6 @@
   --brightOrange: red;
   --box: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   --texture1: url('/images/blue-paint-wall-background-texture.jpg');
-  --texture2: url('/images/stone-surface-background.jpg');
 }
 
 /**Simple Normalization **/
@@ -74,11 +73,18 @@ h5 {
 footer {
   display: flex;
   justify-content: center;
-  height: 100%;
+  gap: 5px;
+  align-items: center;
+  font-size: 1.1em;
+  backdrop-filter: blur(0.5px);
+}
+
+footer a {
+  font-family: 'Rubik glitch';
 }
 
 .screen {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.0);
   height: 100%;
   width: 100%;
   z-index: 1;

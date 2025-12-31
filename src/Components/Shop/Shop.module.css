@@ -26,8 +26,10 @@
   text-align: center;
   overflow: hidden;
   padding: 18px 20px;
-  background-image: var(--texture1);
-  border-radius: 6px;
+  background-image: url(/images/background-paint-still-life.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 3px;
   box-shadow: var(--box);
   transition: transform ease-in-out 0.2s;
   color: var(--bgdark);
@@ -84,7 +86,7 @@
   width: fit-content;
   font-size: 1em;
   color: var(--brightYellow);
-  background-color: var(--brightOrange);
+  background-color: var(--bgdark);
   padding: 3px 7px;
   border-radius: 3px;
   text-align: center;
