@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Loading from '../Loading/Loading.jsx';
 import { Outlet, useMatch, useNavigation } from "react-router";
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 
 function Homepage() {
   const [cart, setCart] = useState([]);
@@ -26,20 +26,21 @@ function Homepage() {
       );
     });
   }
-  function handleQuantity(productId, amount = 1) {
+  function setAmount(id, amount) {
     setCart(prev => {
-      const item = prev.find(i => i.id === productId);
-
-      if (!item) {
-        return [...prev, { id: productId, quantity: amount }];
-      }
-
-      return prev.map(i =>
-        i.id === productId
-          ? { ...i, quantity: amount }
-          : i
-      );
-    });
+      return prev.map(p =>
+        p.id === id
+          ? { ...p, quantity: amount }
+          : p
+      )
+    })
+  }
+  function handleQuantity(productId, amount = 1) {
+    if (amount > 0) {
+      setAmount(productId, amount);
+    } else {
+      removeProduct(productId);
+    }
   }
   function removeOnce(productId) {
     setCart(prev => {
@@ -72,10 +73,7 @@ function Homepage() {
     });
   }
 
-  const shopContext = useMemo(
-    () => ({ cart, addItem, removeOnce, removeProduct, handleQuantity }),
-    [cart]
-  );
+  const shopContext = { cart, addItem, removeOnce, removeProduct, handleQuantity };
 
   return (
     <main className={styles.Homepage}>

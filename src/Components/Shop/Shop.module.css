@@ -10,11 +10,11 @@
 }
 
 .catalog {
-  margin: 30px;
+  margin: 45px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, 360px);
-  gap: 25px;
+  gap: 30px;
   height: 100%;
 }
 
