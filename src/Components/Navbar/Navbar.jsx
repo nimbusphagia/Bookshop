@@ -15,7 +15,9 @@ function Navbar({ counter }) {
           <NavLink to='cart'>
             Shopping cart
             {counter > 0 &&
-              <p className={styles.counter}>{counter}</p>
+              <p
+                className={styles.counter}
+                aria-label={`cart items: ${counter}`}>{counter}</p>
             }
           </NavLink>
         </li>

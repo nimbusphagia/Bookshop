@@ -80,7 +80,7 @@ function Homepage() {
       <Navbar counter={cart.length} />
       {isLoading ?
         <Loading /> :
-        <div className={!isHome && styles.screen}>
+        <div className={!isHome ? styles.screen : undefined}>
           <Outlet context={shopContext} />
           <Footer />
         </div>

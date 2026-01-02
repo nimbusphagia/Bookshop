@@ -35,6 +35,7 @@ function Shop() {
                 <button
                   type="button"
                   className={isAdded(p.asin) ? styles.remove : styles.add}
+                  aria-label={isAdded(p.asin) ? "Remove from cart" : "Add to cart"}
                   onClick={() =>
                     isAdded(p.asin)
                       ? removeProduct(p.asin)
