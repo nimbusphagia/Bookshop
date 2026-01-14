@@ -2,8 +2,7 @@ import styles from './Shop.module.css';
 import { useLoaderData, useOutletContext } from "react-router";
 
 function Shop() {
-  const data = useLoaderData();
-  const products = data.products;
+  const products = useLoaderData();
 
   function getTitle(rawTitle = "", maxWords = 5) {
     const words = rawTitle.trim().split(/\s+/);

@@ -1,11 +1,9 @@
-
 export async function shopLoader() {
   const keyword = encodeURIComponent("vinyl records");
   const geocode = "US";
   const zipcode = "10001";
-  const page = 1;
 
-  const url =
+  const url = (page) =>
     `https://api.scrape.do/plugin/amazon/search` +
     `?token=${import.meta.env.VITE_SCRAPEDO_KEY}` +
     `&keyword=${keyword}` +
@@ -13,14 +11,21 @@ export async function shopLoader() {
     `&zipcode=${zipcode}` +
     `&page=${page}`;
 
-  const res = await fetch(url);
+  const [res1, res2] = await Promise.all([
+    fetch(url(1)),
+    fetch(url(2))
+  ]);
 
-  if (!res.ok) {
+  if (!res1.ok || !res2.ok) {
     throw new Response("Failed to load shop data", {
-      status: res.status
+      status: res1.status || res2.status
     });
   }
 
-  return res.json();
+  const data1 = await res1.json();
+  const data2 = await res2.json();
+
+  return [...data1.products, ...data2.products];
 }
+
 
